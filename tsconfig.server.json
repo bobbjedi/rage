@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "outDir": "packages/freeroam",
+        "sourceMap": true
+    },
+    "include": [
+        "./server"
+    ],
+    "exclude": [
+        "node_modules/@types/ragemp-c"
+    ]
+}

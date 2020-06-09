@@ -1,10 +1,13 @@
 {
   "name": "rage.mp-freeroam",
   "version": "1.0.0",
-  "description": "This is a graphical interface for freeroam servers. Instead of having to memorize and enter console commands, players can click buttons and make selections from lists. Many features are available: vehicles, weapons, skins, etc. ## Instalation 1. `git clone https://github.com/n-n1ks/rage.mp-freeroam.git`. 2. Copy `packages` and `client_packages` to `<rage.mp_client>/server-files/` folder. 3. Start `server.exe`. ### IMPORTANT! If you are using some client packages - don't override your `index.js` file in `client_packages` folder. Just add this line in `index.js`: ```JavaScript require('freeroam/index.js'); ``` Otherwise another client pacakges wont work! ## License Freeroam is released under the [MIT License](https://opensource.org/licenses/MIT).",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "webpack --mode production && tsc --project tsconfig.server.json",
+    "dev": "webpack --mode development --watch",
+    "serve": "nodemon --exec ./ragemp-server.exe  ./pakcages/freeroam/index.js --watch",
+    "ts-server": "tsc --project tsconfig.server.json --watch"
   },
   "repository": {
     "type": "git",
@@ -13,11 +16,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/n-n1ks/rage.mp-freeroam/issues"
+  "devDependencies": {
+    "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#master",
+    "@types/nedb": "^1.8.9",
+    "@types/node": "^13.9.1",
+    "@types/underscore": "^1.9.4"
   },
-  "homepage": "https://github.com/n-n1ks/rage.mp-freeroam#readme",
   "dependencies": {
-    "eslint": "^4.6.1"
+    "nedb": "^1.8.0",
+    "underscore": "^1.10.2"
   }
 }
